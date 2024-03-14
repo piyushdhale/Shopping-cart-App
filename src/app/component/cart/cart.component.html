@@ -1,0 +1,102 @@
+<ng-container *ngIf="product.length != 0">
+  <div class="container" style="padding: 20px">
+    <div class="cart-table">
+      <div class="cart-product">
+        <table class="table-responsive">
+          <thead>
+            <tr class="tr">
+              <th>Sr.No</th>
+              <th>Product Name</th>
+              <th>Product Image</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of product; let i = index">
+              <td style="width: 5%; text-align: center">{{ i + 1 }}</td>
+              <td style="width: 15%; text-align: center">{{ item.title }}</td>
+              <td>
+                <img src="{{ item.image }}" alt="" style="width: 120px" />
+              </td>
+              <td style="width: 25%; text-align: center">
+                {{ item.description }}
+              </td>
+              <td style="width: 15%; text-align: center">{{ item.price }}</td>
+              <td style="width: 15%; text-align: center">
+                {{ item.quantity }}
+              </td>
+              <td style="width: 15%; text-align: center">{{ item.total }}</td>
+              <td>
+                <button
+                  style="
+                    height: 30px;
+                    background: #e60d0d;
+                    color: aliceblue;
+                    border-radius: 15px;
+                  "
+                  (click)="removeItem(item)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4"></td>
+              <td>
+                <button
+                  style="
+                    text-align: center;
+                    height: auto;
+                    width: auto;
+                    background-color: burlywood;
+                  "
+                  routerLink="/products"
+                >
+                  shop more
+                </button>
+              </td>
+              <td>
+                <button
+                  style="
+                    text-align: center;
+                    height: auto;
+                    width: auto;
+                    background-color: rgb(100, 76, 44);
+                    color: aliceblue;
+                  "
+                >
+                  Checkout
+                </button>
+              </td>
+              <td>
+                <strong>Grand Total : {{grandTotal}} Rs./-</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="product.length == 0">
+  <div class="container">
+    <div class="card">
+      <h2 class="cardTitle">My cart</h2>
+    </div>
+
+    <div class="center">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/11329/11329060.png"
+        alt=""
+      />
+      <h4>Your cart is empty...!</h4>
+      <h6>add item to cart</h6>
+      <button routerLink="/products" class="button">Shope Now</button>
+    </div>
+  </div>
+</ng-container>

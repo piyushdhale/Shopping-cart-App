@@ -1,0 +1,92 @@
+<div class="cart-top">
+  <div class="container" style="display: flex">
+    <div class="item">
+      <a>
+        <img
+          src="https://c4.wallpaperflare.com/wallpaper/987/900/23/action-adventure-akbar-biography-wallpaper-preview.jpg"
+          alt="image not found"
+        />
+        <h4>all product</h4>
+      </a>
+    </div>
+
+    <div class="item">
+      <a>
+        <img
+          src="https://w0.peakpx.com/wallpaper/299/646/HD-wallpaper-busy-baby-on-laptop-cute-silly-typing-funny-laptop-baby.jpg"
+          alt="image not found"
+        />
+        <h4>Electronic</h4>
+      </a>
+    </div>
+
+    <div class="item">
+      <a>
+        <img
+          src="https://c4.wallpaperflare.com/wallpaper/377/395/805/action-adventure-akbar-biography-wallpaper-preview.jpg"
+          alt="image not found"
+        />
+        <h4>fasion</h4>
+      </a>
+    </div>
+
+    <div class="item">
+      <a>
+        <img
+          src="https://image.wedmegood.com/resized-nw/1300X/wp-content/uploads/2018/07/36e88a08ef6c641ac84057aa345af1f7.jpg"
+          alt="image not found"
+        />
+        <h4>jwellary</h4>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div
+    class="row"
+    style="display: flex; flex-direction: column; align-items: center"
+  >
+    <ng-container *ngFor="let item of productList">
+      <div
+        class="card"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 750px;
+          border: solid black 2px;
+          margin: 5px;
+          padding: 5px;
+          background: #87d1fc;
+        "
+      >
+        <img
+          src="{{ item.image }}"
+          alt="not found"
+          style="
+            border: solid rgb(79, 184, 245) 2px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            width: 100px;
+            height: 100px;
+          "
+        />
+        <h5>{{ item.title }}</h5>
+        <p>{{ item.description }}</p>
+        <p>{{ item.price }} Rs/-</p>
+        <button
+          style="
+            height: 30px;
+            background-color: rgb(207, 131, 81);
+            border: blanchedalmond;
+            border-radius: 5px;
+          "
+          (click)=addtocart(item)
+        >
+          add to cart
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>

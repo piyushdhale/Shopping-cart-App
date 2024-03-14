@@ -1,0 +1,19 @@
+<header>
+  <div class="nav" style="background-color: rgb(231, 64, 64); height: 40px ; display: flex; padding: 10px;">
+    <div class="navbar" style="align-items: center; display: flex;">
+        <i style="margin: 10px 20px; background-color: blueviolet;">logo here </i>
+        
+        <b style="font-size: larger; color: white;">Shopping application</b>
+        
+        <div class="form-group" style="margin: 10px 40px;">
+            <input type="text" class ="form-control" placeholder="search products">
+        </div>
+        <span  class="search-icon" style="font-size: x-small; background-color: blueviolet;">search icon goes here</span>
+    </div>
+    
+    <button class="cart-icon" style="margin: 0px 20px; " routerLink="cart">
+        <i>cart icon</i>
+        <div style="font-size: 10px; background-color: brown; color: white; border-radius: 50%; width: 15px; height: 15px;" >{{totalItem}}</div>
+    </button>
+  </div>
+</header>
